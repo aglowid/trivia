@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_game_ques_and_an.user_id %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @user_game_ques_and_an.game_id %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @user_game_ques_and_an.question_id %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @user_game_ques_and_an.answer %>
+</p>
+
+<p>
+  <strong>Is correct ans:</strong>
+  <%= @user_game_ques_and_an.is_correct_ans %>
+</p>
+
+<%= link_to 'Edit', edit_user_game_ques_and_an_path(@user_game_ques_and_an) %> |
+<%= link_to 'Back', user_game_ques_and_ans_path %>

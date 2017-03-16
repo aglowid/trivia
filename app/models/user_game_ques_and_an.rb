@@ -1,0 +1,2 @@
+class UserGameQuesAndAn < ApplicationRecord
+end
