@@ -63,10 +63,23 @@ class GamesController < ApplicationController
 
   def select_charactor
 
-
-
   end
 
+  def game_create
+    code = (0...6).map { (65 + rand(26)).chr }.join
+    @game = Game.new(:start_time => (Time.now + 3.minutes) , :game_code => code)
+    @game.user_games.build(:user_id => current_user.id)
+    @game.save
+    # update user game character
+    selected_character_id = params[:selected_id].present? ? params[:selected_id] : rand(2..5)
+    current_user.update_attributes(:selected_character => selected_character_id)
+    redirect_to invite_friend_path(:game_id => @game.id)
+  end
+
+  def invite_friend
+    @game = Game.find(params[:game_id])
+  end  
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game

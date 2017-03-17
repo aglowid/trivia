@@ -1,0 +1,20 @@
+<div class="col-xs-12">
+	<div class="col-xs-4">
+	</div>	
+	<div class="col-xs-4">
+		<center>
+			<h2>Invite Your Friends to Play</h2>
+			<h4> Game Code</h4>
+      <h1><%=@game.game_code %></h1>
+      <h5>Join the fun at lxnxtrivia.com/join </h5>
+      <div class="players"> 
+        <%@game.user_games.each do |game_user| %>
+          <%#= game_user %>
+          <%=image_tag ( User::CHARACTERS.assoc(game_user.user.selected_character)[1] ) %>
+        <% end %>  
+      </div>
+		</center>
+	</div>	
+	<div class="col-xs-4">
+	</div>	
+</div>

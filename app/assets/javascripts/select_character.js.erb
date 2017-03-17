@@ -1,0 +1,6 @@
+function select_character(id)
+{
+	$('a'). removeClass("active");
+	$("#"+id).attr("class","active");
+	$(".ready-link").attr('href',"/game_create?selected_id="+id)
+};

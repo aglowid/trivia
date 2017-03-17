@@ -4,12 +4,13 @@
 	<div class="col-xs-4">
 		<center>
 			<h2>Select your Character</h2>
-			<%= image_tag('caracter_2.png', :class=>"charecter_img")%>
-			<%= image_tag('caracter_3.jpg', :class=>"charecter_img")%>
-			<%= image_tag('caracter_4.jpg', :class=>"charecter_img")%>
-			<%= image_tag('caracter_5.jpg', :class=>"charecter_img")%>
-
-			<h3><%= link_to "Ready", select_charactor_path%></h3>
+			<div class="select_character">
+				<%= link_to image_tag('caracter_2.png', :class=>"charecter_img"), "#" ,:onclick => "select_character(2)" ,:id =>"2"%>
+				<%= link_to image_tag('caracter_3.jpg', :class=>"charecter_img"), "#",:onclick => "select_character(3)",:id => "3"%>
+				<%= link_to image_tag('caracter_4.jpg', :class=>"charecter_img"), "#",:onclick => "select_character(4)",:id => "4"%>
+				<%= link_to image_tag('caracter_5.jpg', :class=>"charecter_img"), "#",:onclick => "select_character(5)",:id=>"5"%>
+      </div>  
+			<h3 ><%= link_to "Ready", game_create_path,:class => "ready-link" ,:method => "POST"%></h3>
 		</center>
 	</div>	
 	<div class="col-xs-4">

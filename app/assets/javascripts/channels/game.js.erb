@@ -1,0 +1,11 @@
+App.games = App.cable.subscriptions.create('GameChannel', {  
+  received: function(data) {
+  	console.log(data['user']['selected_character'])
+  	img_name =  "caracter_" + data['user']['selected_character'] + ".jpg"
+  	console.log(img_name)
+  	str = "<img src=/assets/" + img_name + " />"
+
+  	console.log(str)
+    $(".players").append(str)
+  }
+});

@@ -1,3 +1,11 @@
 .charecter_img{
 	height: 100px;
 }
+.active
+{
+	background-color: black;
+}
+.players img
+{
+	height: 100px;
+}
